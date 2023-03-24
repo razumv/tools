@@ -17,3 +17,4 @@ for i in {1..$1}; do
 done
 
 echo "For view keys use: cat $HOME/keys_$1.txt"
+echo "Done"
