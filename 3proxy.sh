@@ -36,6 +36,7 @@ allow * * * 443,8443 HTTPS
 
 proxy -p53129 -n -a
 users user:CL:P@ssv0rd
+users none * 47.253.53.46,47.253.81.245
 
 EOF
 
