@@ -9,8 +9,8 @@ nserver 1.0.0.1
 nscache 65536
 timeouts 1 5 30 60 180 1800 15 60
 
-external `curl -s ifconfig.me`
-internal `curl -s ifconfig.me`
+external 217.76.54.202
+internal 217.76.54.202
 
 daemon
 
@@ -18,15 +18,18 @@ log /var/log/3proxy/3proxy.log D
 logformat "- +_L%t.%. %N.%p %E %U %C:%c %R:%r %O %I %h %T"
 rotate 30
 
-auth strong
-
 allow * * * 80-88,8080-8088 HTTP
 allow * * * 443,8443 HTTPS
 
-proxy -p53129 -n -a
-users user:CL:P@ssv0rd
-users none * 47.253.53.46,47.253.81.245
+#proxy -p53129 -n -a
+users user:CL:P@ssv0rd312
 
+flush
+auth iponly
+allow * 135.181.206.113,135.181.202.25,217.76.54.202,47.253.53.46,47.253.81.245 * * * * *
+proxy -p53129 -n -a
+
+end
 EOF
 
 
